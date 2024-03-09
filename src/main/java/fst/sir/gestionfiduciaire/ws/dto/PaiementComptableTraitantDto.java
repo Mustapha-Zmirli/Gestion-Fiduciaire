@@ -1,26 +1,18 @@
-package fst.sir.gestionfiduciaire.bean.paiement;
+package fst.sir.gestionfiduciaire.ws.dto;
 
 
 import fst.sir.gestionfiduciaire.bean.commun.Comptable;
+import fst.sir.gestionfiduciaire.bean.demande.Demande;
 import fst.sir.gestionfiduciaire.bean.commun.Societe;
 import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
-import fst.sir.gestionfiduciaire.bean.demande.Demande;
-import jakarta.persistence.*;
 
-@Entity
-public class PaiementComptableTraitant {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class PaiementComptableTraitantDto {
     private Long id;
     private String code;
-    @ManyToOne
     private Societe societe;
-    @ManyToOne
     private Demande demande;
     private double montant;
-    @ManyToOne
     private Comptable comptableTraitant;
-    @ManyToOne
     private TypePaiement typePaiement;
 
     public void setId(Long id) {
