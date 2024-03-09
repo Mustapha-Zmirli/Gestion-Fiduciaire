@@ -1,32 +1,20 @@
-package fst.sir.gestionfiduciaire.bean.paiement;
+package fst.sir.gestionfiduciaire.ws.dto;
 
 import fst.sir.gestionfiduciaire.bean.commun.Societe;
 import fst.sir.gestionfiduciaire.bean.demande.Demande;
-import jakarta.persistence.*;
+import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
+import jakarta.persistence.ManyToOne;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class PaiementDemande {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class PaiementDemandeDto {
     private Long id;
     private String code;
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @ManyToOne
     private Societe societe;
+    @ManyToOne
+    private Demande demande;
+    private double montant;
 
     public LocalDateTime getDatePaiement() {
         return datePaiement;
@@ -36,11 +24,26 @@ public class PaiementDemande {
         this.datePaiement = datePaiement;
     }
 
-    @ManyToOne
-    private Demande demande;
-    private double montant;
     private LocalDateTime datePaiement;
 
+    @ManyToOne
+    private TypePaiement typePaiement;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public Societe getSociete() {
         return societe;
@@ -72,12 +75,5 @@ public class PaiementDemande {
 
     public void setTypePaiement(TypePaiement typePaiement) {
         this.typePaiement = typePaiement;
-    }
-
-    @ManyToOne
-    private TypePaiement typePaiement;
-
-    public Long getId() {
-        return id;
     }
 }
