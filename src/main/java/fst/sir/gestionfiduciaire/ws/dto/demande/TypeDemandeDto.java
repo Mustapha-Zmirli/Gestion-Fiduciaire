@@ -1,19 +1,9 @@
-package fst.sir.gestionfiduciaire.bean.demande;
+package fst.sir.gestionfiduciaire.ws.dto.demande;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-
-public class TypeDemande {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class TypeDemandeDto {
     private Long Id;
     private String Libelle;
-
-    private String code;
+    private String Code;
     private double honnoraireComptableTraitant;
     private double honnoraireComptableValidateur;
 
@@ -50,11 +40,11 @@ public class TypeDemande {
     }
 
     public String getCode() {
-        return code;
+        return Code;
     }
 
     public void setCode(String code) {
-        code = code;
+        Code = code;
     }
 }
 
