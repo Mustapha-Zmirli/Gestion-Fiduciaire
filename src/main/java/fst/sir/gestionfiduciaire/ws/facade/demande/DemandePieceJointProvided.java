@@ -24,4 +24,8 @@ public class DemandePieceJointProvided{
     public int deleteByCode(String code) {
         return pieceJointService.deleteByCode(code);
     }
+    @PostMapping("")
+    public int save( @RequestBody DemandePieceJoint demandePieceJoint) {
+        return pieceJointService.save(demandePieceJoint);
+    }
 }

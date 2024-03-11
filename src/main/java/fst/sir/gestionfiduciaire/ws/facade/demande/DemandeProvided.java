@@ -25,4 +25,8 @@ public class DemandeProvided {
     public int deleteByCode(@PathVariable String code) {
         return demande.deleteByCode(code);
     }
+    @PostMapping("")
+    public int save( @RequestBody Demande demande) {
+        return this.demande.save(demande);
+    }
 }
