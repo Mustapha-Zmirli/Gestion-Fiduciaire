@@ -1,14 +1,6 @@
-package fst.sir.gestionfiduciaire.bean.demande;
+package fst.sir.gestionfiduciaire.ws.dto.demande;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class EtatDemande {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class EtatDemandeDto {
     private Long Id;
     private String libelle;
     private String code;
@@ -37,3 +29,4 @@ public class EtatDemande {
         this.code = code;
     }
 }
+
