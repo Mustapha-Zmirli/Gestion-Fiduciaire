@@ -1,14 +1,7 @@
-package fst.sir.gestionfiduciaire.bean.commun;
+package fst.sir.gestionfiduciaire.ws.dto.commun;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
-@Entity
-public class CategoriePieceJoint {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class CategoriePieceJointDto {
     private Long id;
     private String libelle;
     private String code;
@@ -39,4 +32,3 @@ public class CategoriePieceJoint {
 
 
 }
-
