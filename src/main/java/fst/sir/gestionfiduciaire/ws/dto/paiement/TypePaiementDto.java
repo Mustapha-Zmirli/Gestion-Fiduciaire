@@ -1,4 +1,4 @@
-package fst.sir.gestionfiduciaire.ws.dto;
+package fst.sir.gestionfiduciaire.ws.dto.paiement;
 
 public class TypePaiementDto {
     private Long id;

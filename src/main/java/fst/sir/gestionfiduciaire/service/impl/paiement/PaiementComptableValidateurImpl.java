@@ -1,9 +1,9 @@
-package fst.sir.gestionfiduciaire.service.impl;
+package fst.sir.gestionfiduciaire.service.impl.paiement;
 
 
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableValidateur;
-import fst.sir.gestionfiduciaire.dao.PaiementComptableValidateurDao;
-import fst.sir.gestionfiduciaire.service.facade.PaiementComptableValidateurService;
+import fst.sir.gestionfiduciaire.dao.paiement.PaiementComptableValidateurDao;
+import fst.sir.gestionfiduciaire.service.facade.paiement.PaiementComptableValidateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

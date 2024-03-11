@@ -1,7 +1,7 @@
-package fst.sir.gestionfiduciaire.ws.converter;
+package fst.sir.gestionfiduciaire.ws.converter.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
-import fst.sir.gestionfiduciaire.ws.dto.TypePaiementDto;
+import fst.sir.gestionfiduciaire.ws.dto.paiement.TypePaiementDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

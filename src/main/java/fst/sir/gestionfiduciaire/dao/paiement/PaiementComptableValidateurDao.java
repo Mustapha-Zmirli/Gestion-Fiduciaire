@@ -1,4 +1,4 @@
-package fst.sir.gestionfiduciaire.dao;
+package fst.sir.gestionfiduciaire.dao.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableValidateur;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,9 +1,9 @@
-package fst.sir.gestionfiduciaire.ws.facade;
+package fst.sir.gestionfiduciaire.ws.facade.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementDemande;
-import fst.sir.gestionfiduciaire.service.impl.PaiementServiceImpl;
-import fst.sir.gestionfiduciaire.ws.converter.PaiementDemandeConverter;
-import fst.sir.gestionfiduciaire.ws.dto.PaiementDemandeDto;
+import fst.sir.gestionfiduciaire.service.impl.paiement.PaiementServiceImpl;
+import fst.sir.gestionfiduciaire.ws.converter.paiement.PaiementDemandeConverter;
+import fst.sir.gestionfiduciaire.ws.dto.paiement.PaiementDemandeDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,15 +31,15 @@ public class PaiementDemandeProvided {
         List<PaiementDemande> beans = paiementService.findAll();
         return converter.toDto(beans);
     }
-    @GetMapping("demande/ref/{ref}")
-    public List<PaiementDemandeDto> findByDemandeRef(@PathVariable String ref) {
-        List<PaiementDemande> beans = paiementService.findByDemandeRef(ref);
+    @GetMapping("demande/code/{code}")
+    public List<PaiementDemandeDto> findByDemandeCode(@PathVariable String code) {
+        List<PaiementDemande> beans = paiementService.findByDemandeCode(code);
         return converter.toDto(beans);
     }
 
-    @DeleteMapping("demande/ref/{ref}")
-    public int deleteByDemandeRef(@PathVariable String ref) {
-        return paiementService.deleteByDemandeRef(ref);
+    @DeleteMapping("demande/code/{code}")
+    public int deleteByDemandeCode(@PathVariable String code) {
+        return paiementService.deleteByDemandeCode(code);
     }
     private final PaiementServiceImpl paiementService;
     private final PaiementDemandeConverter converter;

@@ -1,4 +1,4 @@
-package fst.sir.gestionfiduciaire.service.facade;
+package fst.sir.gestionfiduciaire.service.facade.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
 

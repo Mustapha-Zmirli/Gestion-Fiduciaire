@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CategorieComptableDao extends JpaRepository<CategorieComptableDao,Long> {
+public interface CategorieComptableDao extends JpaRepository<CategorieComptable,Long> {
     public CategorieComptable findByCode(String code);
 
     int deleteByCode(String code);

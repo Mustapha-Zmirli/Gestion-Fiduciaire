@@ -1,8 +1,8 @@
-package fst.sir.gestionfiduciaire.service.impl;
+package fst.sir.gestionfiduciaire.service.impl.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
-import fst.sir.gestionfiduciaire.dao.TypePaiementDao;
-import fst.sir.gestionfiduciaire.service.facade.TypePaiementService;
+import fst.sir.gestionfiduciaire.dao.paiement.TypePaiementDao;
+import fst.sir.gestionfiduciaire.service.facade.paiement.TypePaiementService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

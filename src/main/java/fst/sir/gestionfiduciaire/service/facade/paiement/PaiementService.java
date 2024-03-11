@@ -1,7 +1,6 @@
-package fst.sir.gestionfiduciaire.service.facade;
+package fst.sir.gestionfiduciaire.service.facade.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementDemande;
-
 import java.util.List;
 
 public interface PaiementService {
@@ -9,7 +8,9 @@ public interface PaiementService {
 
     int deleteByCode(String code);
 
-    List<PaiementDemande> findByDemandeRef(String ref);
+    List<PaiementDemande> findByDemandeCode(String code);
 
-    int deleteByDemandeRef(String ref);
+    int deleteByDemandeCode(String code);
+
+
 }
