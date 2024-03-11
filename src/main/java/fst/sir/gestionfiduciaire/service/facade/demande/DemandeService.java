@@ -7,4 +7,6 @@ public interface DemandeService {
     Demande findByCode(String code);
 
     int deleteByCode(String code);
+
+    int save(Demande demande);
 }
