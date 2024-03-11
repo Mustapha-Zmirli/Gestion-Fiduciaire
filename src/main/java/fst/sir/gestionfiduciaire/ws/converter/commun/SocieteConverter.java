@@ -14,6 +14,8 @@ public class SocieteConverter {
         Societe bean = new Societe();
         bean.setId(dto.getId());
         bean.setCode(dto.getCode());
+        bean.setIce(dto.getIce());
+        bean.setRc(dto.getRc());
         return bean;
     }
 
@@ -25,6 +27,8 @@ public class SocieteConverter {
         SocieteDto dto = new SocieteDto();
         dto.setId(bean.getId());
         dto.setCode(bean.getCode());
+        dto.setIce(bean.getIce());
+        dto.setRc(bean.getRc());
         return dto;
     }
 
