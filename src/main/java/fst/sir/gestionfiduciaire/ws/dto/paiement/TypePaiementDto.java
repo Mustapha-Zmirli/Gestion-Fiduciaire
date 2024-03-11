@@ -1,19 +1,16 @@
-package fst.sir.gestionfiduciaire.bean.commun;
-import jakarta.persistence.*;
-@Entity
-public class CategorieComptable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+package fst.sir.gestionfiduciaire.ws.dto.paiement;
+
+public class TypePaiementDto {
     private Long id;
     private String libelle;
     private String code;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLibelle() {

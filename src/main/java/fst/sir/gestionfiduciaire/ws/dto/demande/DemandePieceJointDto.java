@@ -1,27 +1,32 @@
-package fst.sir.gestionfiduciaire.bean.demande;
+package fst.sir.gestionfiduciaire.ws.dto.demande;
+import fst.sir.gestionfiduciaire.bean.demande.Demande;
+import jakarta.persistence.ManyToOne;
 
+import java.time.LocalDateTime;
 
-import fst.sir.gestionfiduciaire.bean.commun.CategoriePieceJoint;
-import jakarta.persistence.*;
-
-@Entity
-public class DemandePieceJoint {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class DemandePieceJointDto {
     private Long id;
     private String code ;
-    @ManyToOne
     private Demande demande;
-
     private String path;
+
+    public Long getId() {
+        return id;
+    }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Long getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+
 
     public Demande getDemande() {
         return demande;
@@ -38,12 +43,5 @@ public class DemandePieceJoint {
     public void setPath(String path) {
         this.path = path;
     }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
 }
+

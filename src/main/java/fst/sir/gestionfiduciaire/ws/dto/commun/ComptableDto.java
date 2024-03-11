@@ -1,25 +1,23 @@
+package fst.sir.gestionfiduciaire.ws.dto.commun;
 
-package fst.sir.gestionfiduciaire.bean.commun;
-import jakarta.persistence.*;
 
-@Entity
-public class Comptable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+import fst.sir.gestionfiduciaire.bean.commun.CategorieComptable;
+
+public class ComptableDto {
     private Long id;
     private String cin;
     private String nom;
     private String prenom;
     private String email;
-    @ManyToOne
-    private CategorieComptable categorieComptable;
+    private CategorieComptable categorieComptableId;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCin() {
@@ -29,7 +27,6 @@ public class Comptable {
     public void setCin(String cin) {
         this.cin = cin;
     }
-
 
     public String getNom() {
         return nom;
@@ -55,11 +52,12 @@ public class Comptable {
         this.email = email;
     }
 
-    public CategorieComptable getCategorieComptable() {
-        return categorieComptable;
+    public CategorieComptable getCategorieComptableId() {
+        return categorieComptableId;
     }
 
-    public void setCategorieComptable(CategorieComptable categorieComptable) {
-        this.categorieComptable = categorieComptable;
+    public void setCategorieComptableId(CategorieComptable categorieComptableId) {
+        this.categorieComptableId = categorieComptableId;
     }
 }
+
