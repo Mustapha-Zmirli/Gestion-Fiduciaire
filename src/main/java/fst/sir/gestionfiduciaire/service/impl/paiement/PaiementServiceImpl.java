@@ -1,8 +1,8 @@
-package fst.sir.gestionfiduciaire.service.impl;
+package fst.sir.gestionfiduciaire.service.impl.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementDemande;
-import fst.sir.gestionfiduciaire.dao.PaiementDao;
-import fst.sir.gestionfiduciaire.service.facade.PaiementService;
+import fst.sir.gestionfiduciaire.dao.paiement.PaiementDao;
+import fst.sir.gestionfiduciaire.service.facade.paiement.PaiementService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,14 +28,14 @@ public class PaiementServiceImpl implements PaiementService {
         return paiementDao.findAll();
     }
     @Override
-    public List<PaiementDemande> findByDemandeRef(String ref) {
-        return paiementDao.findByDemandeRef(ref);
+    public List<PaiementDemande> findByDemandeCode(String code) {
+        return paiementDao.findByDemandeCode(code);
     }
 
     @Override
     @Transactional
-    public int deleteByDemandeRef(String ref) {
-        return paiementDao.deleteByDemandeRef(ref);
+    public int deleteByDemandeCode(String code) {
+        return paiementDao.deleteByDemandeCode(code);
     }
 
 

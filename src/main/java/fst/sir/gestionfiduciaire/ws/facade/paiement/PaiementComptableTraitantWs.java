@@ -1,9 +1,9 @@
-package fst.sir.gestionfiduciaire.ws.facade;
+package fst.sir.gestionfiduciaire.ws.facade.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableTraitant;
-import fst.sir.gestionfiduciaire.service.facade.PaiementComptableTraitantService;
-import fst.sir.gestionfiduciaire.ws.converter.PaiementComptableTraitantConverter;
-import fst.sir.gestionfiduciaire.ws.dto.PaiementComptableTraitantDto;
+import fst.sir.gestionfiduciaire.service.facade.paiement.PaiementComptableTraitantService;
+import fst.sir.gestionfiduciaire.ws.converter.paiement.PaiementComptableTraitantConverter;
+import fst.sir.gestionfiduciaire.ws.dto.paiement.PaiementComptableTraitantDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @RestController

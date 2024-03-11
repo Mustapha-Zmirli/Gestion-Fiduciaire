@@ -1,4 +1,4 @@
-package fst.sir.gestionfiduciaire.ws.dto;
+package fst.sir.gestionfiduciaire.ws.dto.paiement;
 
 
 import fst.sir.gestionfiduciaire.bean.commun.Comptable;

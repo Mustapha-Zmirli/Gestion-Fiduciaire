@@ -1,8 +1,8 @@
-package fst.sir.gestionfiduciaire.ws.converter;
+package fst.sir.gestionfiduciaire.ws.converter.paiement;
 
 
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableValidateur;
-import fst.sir.gestionfiduciaire.ws.dto.PaiementComptableValidateurDto;
+import fst.sir.gestionfiduciaire.ws.dto.paiement.PaiementComptableValidateurDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

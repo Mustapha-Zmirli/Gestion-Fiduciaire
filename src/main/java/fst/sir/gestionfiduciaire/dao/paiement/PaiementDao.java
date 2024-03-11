@@ -1,4 +1,4 @@
-package fst.sir.gestionfiduciaire.dao;
+package fst.sir.gestionfiduciaire.dao.paiement;
 
 
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementDemande;
@@ -11,7 +11,7 @@ import java.util.List;
 public interface PaiementDao extends JpaRepository<PaiementDemande,Long> {
     PaiementDemande findByCode(String code);
     int deleteByCode(String code);
-    List<PaiementDemande> findByDemandeRef(String ref);
-    int deleteByDemandeRef(String ref);
+    List<PaiementDemande> findByDemandeCode(String code);
+    int deleteByDemandeCode(String code);
 
 }

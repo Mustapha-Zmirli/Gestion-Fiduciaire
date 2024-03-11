@@ -1,9 +1,9 @@
-package fst.sir.gestionfiduciaire.ws.facade;
+package fst.sir.gestionfiduciaire.ws.facade.paiement;
 
 import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
-import fst.sir.gestionfiduciaire.service.impl.TypePaiementServiceImpl;
-import fst.sir.gestionfiduciaire.ws.converter.TypePaiementConverter;
-import fst.sir.gestionfiduciaire.ws.dto.TypePaiementDto;
+import fst.sir.gestionfiduciaire.service.impl.paiement.TypePaiementServiceImpl;
+import fst.sir.gestionfiduciaire.ws.converter.paiement.TypePaiementConverter;
+import fst.sir.gestionfiduciaire.ws.dto.paiement.TypePaiementDto;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
