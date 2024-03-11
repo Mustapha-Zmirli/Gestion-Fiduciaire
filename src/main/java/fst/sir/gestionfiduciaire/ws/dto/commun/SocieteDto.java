@@ -1,17 +1,8 @@
-package fst.sir.gestionfiduciaire.bean.commun;
+package fst.sir.gestionfiduciaire.ws.dto.commun;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Societe {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class SocieteDto {
     private Long id;
     private String code;
-
 
     public String getCode() {
         return code;
@@ -30,3 +21,4 @@ public class Societe {
         return id;
     }
 }
+
