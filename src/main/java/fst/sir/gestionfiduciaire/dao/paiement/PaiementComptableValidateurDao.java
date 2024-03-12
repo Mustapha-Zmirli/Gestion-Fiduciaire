@@ -16,6 +16,5 @@ public interface PaiementComptableValidateurDao extends JpaRepository<PaiementCo
     int deleteByDemandeCode(String code);
     int deleteByComptableValidateurCin(String cin);
     int deleteByTypePaiementCode(String code);
-    PaiementComptableValidateur save(PaiementComptableValidateur paiementComptableValidateur);
 }
 

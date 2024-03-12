@@ -14,14 +14,14 @@ public class PaiementComptableTraitant {
     private Long id;
     private String code;
     @ManyToOne
-    private Societe societe;
+    private static Societe societe;
     @ManyToOne
-    private Demande demande;
+    private static Demande demande;
     private double montant;
     @ManyToOne
-    private Comptable comptableTraitant;
+    private static Comptable comptableTraitant;
     @ManyToOne
-    private TypePaiement typePaiement;
+    private static TypePaiement typePaiement;
 
     public void setId(Long id) {
         this.id = id;
@@ -39,7 +39,7 @@ public class PaiementComptableTraitant {
         this.code = code;
     }
 
-    public Societe getSociete() {
+    public static Societe getSociete() {
         return societe;
     }
 
@@ -47,7 +47,7 @@ public class PaiementComptableTraitant {
         this.societe = societe;
     }
 
-    public Demande getDemande() {
+    public static Demande getDemande() {
         return demande;
     }
 
@@ -63,7 +63,7 @@ public class PaiementComptableTraitant {
         this.montant = montant;
     }
 
-    public Comptable getComptableTraitant() {
+    public static Comptable getComptableTraitant() {
         return comptableTraitant;
     }
 
@@ -71,7 +71,7 @@ public class PaiementComptableTraitant {
         this.comptableTraitant = comptableTraitant;
     }
 
-    public TypePaiement getTypePaiement() {
+    public static TypePaiement getTypePaiement() {
         return typePaiement;
     }
 
