@@ -26,12 +26,12 @@ public class TypePaiementServiceImpl implements TypePaiementService {
 
     @Override
     public int save(TypePaiement typePaiement) {
-        if (findByCode(typePaiement.getCode()) == null) {
+        if (findByCode(typePaiement.getCode()) != null) {
             return -1;
         } else {
             typePaiementDao.save(typePaiement);
+            return 1;
         }
-        return 1;
     }
 
     private final TypePaiementDao typePaiementDao;

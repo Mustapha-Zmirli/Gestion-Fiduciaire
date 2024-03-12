@@ -37,7 +37,7 @@ public class PaiementComptableTraitantWs {
         return paiementComptableTraitantService.deleteByCode(code);
     }
     @PostMapping("")
-    public PaiementComptableTraitant save(@RequestBody PaiementComptableTraitantDto dto) {
+    public int save(@RequestBody PaiementComptableTraitantDto dto) {
         PaiementComptableTraitant bean=converter.toBean(dto);
         return paiementComptableTraitantService.save(bean);
     }
