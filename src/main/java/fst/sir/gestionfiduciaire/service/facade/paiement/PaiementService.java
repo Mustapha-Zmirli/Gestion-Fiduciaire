@@ -4,6 +4,8 @@ import fst.sir.gestionfiduciaire.bean.paiement.PaiementDemande;
 import java.util.List;
 
 public interface PaiementService {
+    int  save(PaiementDemande paiement);
+
     PaiementDemande findByCode(String code);
 
     int deleteByCode(String code);

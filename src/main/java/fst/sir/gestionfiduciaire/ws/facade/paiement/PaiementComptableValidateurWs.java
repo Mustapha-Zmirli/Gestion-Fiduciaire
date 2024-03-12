@@ -55,7 +55,7 @@ public class PaiementComptableValidateurWs {
         return paiementComptableValidateurService.deleteByTypePaiementCode(code);
     }
     @PostMapping("")
-    public PaiementComptableValidateur save(@RequestBody PaiementComptableValidateurDto dto) {
+    public int save(@RequestBody PaiementComptableValidateurDto dto) {
         PaiementComptableValidateur bean= converter.toBean(dto);
         return paiementComptableValidateurService.save(bean);
     }
