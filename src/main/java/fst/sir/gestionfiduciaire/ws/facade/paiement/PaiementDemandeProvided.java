@@ -31,6 +31,11 @@ public class PaiementDemandeProvided {
         List<PaiementDemande> beans = paiementService.findAll();
         return converter.toDto(beans);
     }
+    @PostMapping("")
+    public int save(@RequestBody PaiementDemandeDto dto) {
+        PaiementDemande bean = converter.toBean(dto);
+        return paiementService.save(bean);
+    }
     @GetMapping("demande/code/{code}")
     public List<PaiementDemandeDto> findByDemandeCode(@PathVariable String code) {
         List<PaiementDemande> beans = paiementService.findByDemandeCode(code);
