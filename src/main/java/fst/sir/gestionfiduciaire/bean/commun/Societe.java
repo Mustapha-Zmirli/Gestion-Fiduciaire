@@ -46,4 +46,5 @@ public class Societe {
     public Long getId() {
         return id;
     }
+
 }

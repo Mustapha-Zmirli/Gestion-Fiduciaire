@@ -19,6 +19,5 @@ public interface PaiementComptableTraitantDao extends JpaRepository<PaiementComp
     int deleteByTypePaiementCode(String code);
     int deleteByCode(String code);
 
-    PaiementComptableTraitant save(PaiementComptableTraitant paiementComptableTraitant);
 }
 

@@ -17,7 +17,7 @@ public interface PaiementComptableTraitantService {
 
     int deleteByCode(String code);
 
-    PaiementComptableTraitant save(PaiementComptableTraitant paiementComptableTraitant);
+    int save(PaiementComptableTraitant paiementComptableTraitant);
 
     int deleteBySocieteCode(String code);
 

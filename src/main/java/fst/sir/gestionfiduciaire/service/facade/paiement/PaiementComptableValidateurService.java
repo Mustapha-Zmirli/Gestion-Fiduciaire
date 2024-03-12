@@ -14,7 +14,7 @@ public interface PaiementComptableValidateurService {
     PaiementComptableValidateur findByCode(String code);
 
     PaiementComptableValidateur findByTypePaiementCode(String code);
-    PaiementComptableValidateur save(PaiementComptableValidateur paiementComptableValidateur);
+    int save(PaiementComptableValidateur paiementComptableValidateur);
 
 
     int deleteByCode(String code);
