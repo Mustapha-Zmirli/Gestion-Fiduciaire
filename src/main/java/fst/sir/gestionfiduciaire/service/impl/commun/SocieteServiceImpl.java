@@ -1,6 +1,5 @@
 package fst.sir.gestionfiduciaire.service.impl.commun;
 
-
 import fst.sir.gestionfiduciaire.bean.commun.Societe;
 import fst.sir.gestionfiduciaire.dao.commun.SocieteDao;
 import fst.sir.gestionfiduciaire.service.facade.commun.SocieteService;
@@ -26,15 +25,22 @@ public class SocieteServiceImpl implements SocieteService {
 
 
 
-
-    public int save(Societe s)
-    {
-        if (findByCode(s.getCode()) != null) {
+    @Override
+    public int save(Societe societe) {
+        Societe existingSociete = dao.findByCode(societe.getCode());
+        if (existingSociete != null) {
+            existingSociete.setNom(societe.getNom());
+            existingSociete.setIce(societe.getIce());
+            existingSociete.setRc(societe.getRc());
+            existingSociete.setEmail(societe.getEmail());
+            existingSociete.setTelephone(societe.getTelephone());
+            dao.save(existingSociete);
             return -1;
-        }else if (findByCode(s.getCode()) != null) {
-            return -2;
         } else {
-            dao.save(s);
-            return 1;}
+            dao.save(societe);
+            return 1;
+        }
     }
 }
+
+

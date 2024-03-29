@@ -1,6 +1,8 @@
 package fst.sir.gestionfiduciaire.ws.facade.commun;
 
 
+
+
 import fst.sir.gestionfiduciaire.bean.commun.Societe;
 import fst.sir.gestionfiduciaire.service.facade.commun.SocieteService;
 import fst.sir.gestionfiduciaire.ws.converter.commun.SocieteConverter;
@@ -28,5 +30,10 @@ public class SocieteProvided {
     @DeleteMapping("/code/{code}")
     public int deleteByCode(@PathVariable String code) {
         return service.deleteByCode(code);
+    }
+    @PostMapping(path = "/save")
+    public int save(@RequestBody SocieteDto dto) {
+        Societe bean = converter.toBean(dto);
+        return service.save(bean);
     }
 }
