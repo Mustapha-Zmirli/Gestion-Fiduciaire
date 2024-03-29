@@ -41,6 +41,11 @@ public class PaiementDemandeProvided {
         List<PaiementDemande> beans = paiementService.findByDemandeCode(code);
         return converter.toDto(beans);
     }
+    @PutMapping("code/{code}")
+    public int update(@PathVariable String code, @RequestBody PaiementDemandeDto paiementDto) {
+        PaiementDemande bean = converter.toBean(paiementDto);
+        return paiementService.update(code, bean);
+    }
 
     @DeleteMapping("demande/code/{code}")
     public int deleteByDemandeCode(@PathVariable String code) {
