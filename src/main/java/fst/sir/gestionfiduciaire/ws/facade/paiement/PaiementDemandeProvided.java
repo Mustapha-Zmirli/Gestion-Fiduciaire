@@ -59,14 +59,15 @@ public class PaiementDemandeProvided {
     }
     @GetMapping("societe/code/{code}")
     public List<PaiementDemandeDto> getPaiementsBySocieteCode(@PathVariable String code) {
-        List<PaiementDemande> paiements = paiementService.findBySocieteCode(code);
-        return converter.toDto(paiements);
+        List<PaiementDemande> beans = paiementService.findBySocieteCode(code);
+        return converter.toDto(beans);
     }
     @GetMapping("betweenDates")
-    public List<PaiementDemande> getPaiementsBetweenDates(
+    public List<PaiementDemandeDto> getPaiementsBetweenDates(
             @RequestParam("dateDebut") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateDebut,
             @RequestParam("dateFin") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateFin) {
-        return paiementService.getPaiementsBetweenDates(dateDebut, dateFin);
+        List<PaiementDemande> beans = paiementService.getPaiementsBetweenDates(dateDebut, dateFin);
+        return converter.toDto(beans);
     }
     private final PaiementServiceImpl paiementService;
     private final PaiementDemandeConverter converter;
