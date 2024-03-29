@@ -35,4 +35,9 @@ public class DemandePieceJointImpl implements DemandePieceJointService {
 
         }
     }
+
+    @Override
+    public DemandePieceJoint findPieceJointByDemandeCode(String code) {
+        return pieceJointDao.findPieceJointByDemandeCode(code);
+    }
 }

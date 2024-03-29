@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 public interface DemandePieceJointDao extends JpaRepository<DemandePieceJoint,Long> {
     DemandePieceJoint findByCode(String code);
     int deleteByCode(String code);
+    DemandePieceJoint findPieceJointByDemandeCode(String code);
 }

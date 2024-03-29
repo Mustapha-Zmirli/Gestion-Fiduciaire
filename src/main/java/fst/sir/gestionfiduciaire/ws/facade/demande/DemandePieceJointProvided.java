@@ -24,8 +24,12 @@ public class DemandePieceJointProvided{
     public int deleteByCode(String code) {
         return pieceJointService.deleteByCode(code);
     }
-    @PostMapping("")
+    @PostMapping("/")
     public int save( @RequestBody DemandePieceJoint demandePieceJoint) {
         return pieceJointService.save(demandePieceJoint);
+    }
+    @GetMapping("/code/{code}")
+    public DemandePieceJoint findPieceJointByDemandeCode(String code) {
+        return pieceJointService.findPieceJointByDemandeCode(code);
     }
 }

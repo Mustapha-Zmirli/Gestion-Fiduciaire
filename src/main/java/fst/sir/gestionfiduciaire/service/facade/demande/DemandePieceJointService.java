@@ -9,4 +9,7 @@ public interface DemandePieceJointService {
     int deleteByCode(String code);
 
     int save(DemandePieceJoint demandePieceJoint);
+
+
+    DemandePieceJoint findPieceJointByDemandeCode(String code);
 }

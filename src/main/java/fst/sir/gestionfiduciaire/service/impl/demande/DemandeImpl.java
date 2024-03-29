@@ -1,11 +1,14 @@
 package fst.sir.gestionfiduciaire.service.impl.demande;
 import fst.sir.gestionfiduciaire.bean.demande.Demande;
+import fst.sir.gestionfiduciaire.bean.demande.EtatDemande;
 import fst.sir.gestionfiduciaire.dao.commun.ComptableDao;
 import fst.sir.gestionfiduciaire.dao.commun.SocieteDao;
 import fst.sir.gestionfiduciaire.dao.demande.DemandeDao;
 import fst.sir.gestionfiduciaire.service.facade.demande.DemandeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class DemandeImpl implements DemandeService {
@@ -19,16 +22,6 @@ public class DemandeImpl implements DemandeService {
     fst.sir.gestionfiduciaire.dao.Demande.TypeDemandeDao typeDemandeDao;
     @Autowired
     ComptableDao comptableDao;
-
-    @Override
-    public Demande findByCode(String code) {
-        return demandeDao.findByCode(code);
-    }
-
-    @Override
-    public int deleteByCode(String code) {
-        return demandeDao.deleteByCode(code);
-    }
     @Override
     public int save(Demande demande) {
         String code1 = demande.getSociete().getCode();
@@ -47,6 +40,31 @@ public class DemandeImpl implements DemandeService {
         } else {
             return -1;
         }
+    }
+    @Override
+    public int changerEtatDemande(String code, EtatDemande nvEatat){
+        Demande demande = findByCode(code);
+        if(demande == null){
+            return -1;
+        }else {
+            demande.setEtatDemande(nvEatat);
+            demandeDao.save(demande);
+            return 1;
+        }
+
+    }
+    @Override
+    public Demande findByCode(String code) {
+        return demandeDao.findByCode(code);
+    }
+
+    @Override
+    public int deleteByCode(String code) {
+        return demandeDao.deleteByCode(code);
+    }
+    @Override
+    public List<Demande> findAll() {
+        return demandeDao.findAll();
     }
 }
 

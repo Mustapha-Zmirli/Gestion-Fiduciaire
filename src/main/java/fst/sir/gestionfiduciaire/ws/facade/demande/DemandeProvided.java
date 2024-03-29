@@ -2,11 +2,14 @@ package fst.sir.gestionfiduciaire.ws.facade.demande;
 
 
 import fst.sir.gestionfiduciaire.bean.demande.Demande;
+import fst.sir.gestionfiduciaire.bean.demande.EtatDemande;
 import fst.sir.gestionfiduciaire.service.impl.demande.DemandeImpl;
 import fst.sir.gestionfiduciaire.ws.converter.demande.DemandeConverter;
 import fst.sir.gestionfiduciaire.ws.dto.demande.DemandeDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/Deamande")
@@ -25,8 +28,18 @@ public class DemandeProvided {
     public int deleteByCode(@PathVariable String code) {
         return demande.deleteByCode(code);
     }
-    @PostMapping("")
+    @PostMapping("/")
     public int save( @RequestBody Demande demande) {
         return this.demande.save(demande);
+    }
+    @GetMapping("/")
+    public List<DemandeDto> findAll() {
+        List<Demande> demandes = demande.findAll();
+        List<DemandeDto> dtos = converter.toDto(demandes);
+        return dtos;
+    }
+    @PutMapping("/code/{code}")
+    public int changerEtatDemande(@PathVariable String code, @RequestBody EtatDemande nvEatat) {
+        return demande.changerEtatDemande(code, nvEatat);
     }
 }
