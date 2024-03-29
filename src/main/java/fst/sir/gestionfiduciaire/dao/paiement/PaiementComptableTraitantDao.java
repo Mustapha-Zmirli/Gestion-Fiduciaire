@@ -2,9 +2,12 @@ package fst.sir.gestionfiduciaire.dao.paiement;
 
 
 
+import fst.sir.gestionfiduciaire.bean.commun.Comptable;
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableTraitant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface PaiementComptableTraitantDao extends JpaRepository<PaiementComptableTraitant, Long> {
@@ -19,5 +22,6 @@ public interface PaiementComptableTraitantDao extends JpaRepository<PaiementComp
     int deleteByTypePaiementCode(String code);
     int deleteByCode(String code);
 
+    List<PaiementComptableTraitant> findByComptableTraitant(Comptable comptable);
 }
 

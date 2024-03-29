@@ -6,6 +6,9 @@ import fst.sir.gestionfiduciaire.ws.converter.paiement.PaiementComptableTraitant
 import fst.sir.gestionfiduciaire.ws.dto.paiement.PaiementComptableTraitantDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/PaiementComptableTraitant/")
 public class PaiementComptableTraitantWs {
@@ -41,6 +44,11 @@ public class PaiementComptableTraitantWs {
         PaiementComptableTraitant bean=converter.toBean(dto);
         return paiementComptableTraitantService.save(bean);
     }
+    @GetMapping("")
+    public List<PaiementComptableTraitantDto> findAll() {
+        List<PaiementComptableTraitant> beans = paiementComptableTraitantService.findAll();
+        return converter.toDto(beans);
+    }
     @DeleteMapping("Societe/code/{code}")
     public int deleteBySocieteCode(@PathVariable String code) {
         return paiementComptableTraitantService.deleteBySocieteCode(code);
@@ -57,5 +65,8 @@ public class PaiementComptableTraitantWs {
     public int deleteByTypePaiementCode(@PathVariable String code) {
         return paiementComptableTraitantService.deleteByTypePaiementCode(code);
     }
+
+
+
 }
 

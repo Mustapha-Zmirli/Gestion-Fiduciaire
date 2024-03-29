@@ -12,6 +12,7 @@ public class PaiementDemande {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String code;
+    private String etat;
 
     public String getCode() {
         return code;
@@ -23,6 +24,14 @@ public class PaiementDemande {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 
     @ManyToOne

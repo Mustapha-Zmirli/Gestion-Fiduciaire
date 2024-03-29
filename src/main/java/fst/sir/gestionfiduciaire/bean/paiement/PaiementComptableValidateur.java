@@ -6,6 +6,8 @@ import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
 import fst.sir.gestionfiduciaire.bean.demande.Demande;
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 public class PaiementComptableValidateur {
 
@@ -22,6 +24,53 @@ public class PaiementComptableValidateur {
     private TypePaiement typePaiement;
     @ManyToOne
     private Comptable comptableValidateur;
+
+    private boolean enAttenteValidation;
+    private boolean valide;
+
+    private String raisonRejet;
+    private Date dateCreation;
+    private Date dateLimite;
+
+    public Date getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Date dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public Date getDateLimite() {
+        return dateLimite;
+    }
+
+    public void setDateLimite(Date dateLimite) {
+        this.dateLimite = dateLimite;
+    }
+
+    public boolean isValide() {
+        return valide;
+    }
+
+    public void setValide(boolean valide) {
+        this.valide = valide;
+    }
+
+    public String getRaisonRejet() {
+        return raisonRejet;
+    }
+
+    public void setRaisonRejet(String raisonRejet) {
+        this.raisonRejet = raisonRejet;
+    }
+
+    public boolean isEnAttenteValidation() {
+        return enAttenteValidation;
+    }
+
+    public void setEnAttenteValidation(boolean enAttenteValidation) {
+        this.enAttenteValidation = enAttenteValidation;
+    }
 
     public void setId(Long id) {
         this.id = id;

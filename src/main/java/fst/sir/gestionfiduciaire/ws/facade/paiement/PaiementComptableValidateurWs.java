@@ -7,6 +7,8 @@ import fst.sir.gestionfiduciaire.ws.dto.paiement.PaiementComptableValidateurDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/PaiementComptableValidateur/")
 public class PaiementComptableValidateurWs {
@@ -58,6 +60,11 @@ public class PaiementComptableValidateurWs {
     public int save(@RequestBody PaiementComptableValidateurDto dto) {
         PaiementComptableValidateur bean= converter.toBean(dto);
         return paiementComptableValidateurService.save(bean);
+    }
+    @GetMapping("")
+    public List<PaiementComptableValidateurDto> findAll() {
+        List<PaiementComptableValidateur> beans = paiementComptableValidateurService.findAll();
+        return converter.toDto(beans);
     }
 }
 

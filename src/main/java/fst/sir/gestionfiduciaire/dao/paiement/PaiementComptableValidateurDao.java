@@ -4,6 +4,8 @@ import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableValidateur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface PaiementComptableValidateurDao extends JpaRepository<PaiementComptableValidateur, Long> {
     PaiementComptableValidateur findByCode(String code);
@@ -16,5 +18,7 @@ public interface PaiementComptableValidateurDao extends JpaRepository<PaiementCo
     int deleteByDemandeCode(String code);
     int deleteByComptableValidateurCin(String cin);
     int deleteByTypePaiementCode(String code);
+
+    List<PaiementComptableValidateur> findByValideFalse();
 }
 
