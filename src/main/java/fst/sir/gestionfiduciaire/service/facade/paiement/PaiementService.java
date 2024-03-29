@@ -5,6 +5,7 @@ import fst.sir.gestionfiduciaire.ws.dto.paiement.PaiementDemandeDto;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public interface PaiementService {
@@ -25,7 +26,7 @@ public interface PaiementService {
 
 
     @Transactional
-    int update(String code, PaiementDemande paiement);
+    int update(String code, PaiementDemande nouveauPaiement);
 
-    List<PaiementDemande> getPaiementsBetweenDates(LocalDateTime dateDebut, LocalDateTime dateFin);
+    List<PaiementDemande> getPaiementsBetweenDates(Date dateDebut, Date dateFin);
 }

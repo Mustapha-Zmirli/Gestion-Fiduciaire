@@ -13,7 +13,6 @@ public class PaiementDemande {
     private Long id;
     private String code;
     private String etat;
-
     public String getCode() {
         return code;
     }
