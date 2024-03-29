@@ -14,14 +14,26 @@ public class PaiementComptableTraitant {
     private Long id;
     private String code;
     @ManyToOne
-    private static Societe societe;
+    private Societe societe;
     @ManyToOne
-    private static Demande demande;
+    private Demande demande;
     private double montant;
     @ManyToOne
-    private static Comptable comptableTraitant;
+    private Comptable comptableTraitant;
     @ManyToOne
-    private static TypePaiement typePaiement;
+    private TypePaiement typePaiement;
+
+    private boolean enAttente;
+
+    // Getters et setters pour l'attribut "enAttente"
+
+    public boolean isEnAttente() {
+        return enAttente;
+    }
+
+    public void setEnAttente(boolean enAttente) {
+        this.enAttente = enAttente;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -39,7 +51,7 @@ public class PaiementComptableTraitant {
         this.code = code;
     }
 
-    public static Societe getSociete() {
+    public Societe getSociete() {
         return societe;
     }
 
@@ -47,7 +59,7 @@ public class PaiementComptableTraitant {
         this.societe = societe;
     }
 
-    public static Demande getDemande() {
+    public Demande getDemande() {
         return demande;
     }
 
@@ -63,7 +75,7 @@ public class PaiementComptableTraitant {
         this.montant = montant;
     }
 
-    public static Comptable getComptableTraitant() {
+    public Comptable getComptableTraitant() {
         return comptableTraitant;
     }
 
@@ -71,7 +83,7 @@ public class PaiementComptableTraitant {
         this.comptableTraitant = comptableTraitant;
     }
 
-    public static TypePaiement getTypePaiement() {
+    public TypePaiement getTypePaiement() {
         return typePaiement;
     }
 

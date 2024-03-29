@@ -11,6 +11,17 @@ public class Comptable {
     private String nom;
     private String prenom;
     private String email;
+    private int nombrePaiementsTraites;
+    private int nombrePaiementsValidees;
+
+    public int getNombrePaiementsValidees() {
+        return nombrePaiementsValidees;
+    }
+
+    public void setNombrePaiementsValidees(int nombrePaiementsValidees) {
+        this.nombrePaiementsValidees = nombrePaiementsValidees;
+    }
+
     @ManyToOne
     private CategorieComptable categorieComptable;
 
@@ -61,5 +72,13 @@ public class Comptable {
 
     public void setCategorieComptable(CategorieComptable categorieComptable) {
         this.categorieComptable = categorieComptable;
+    }
+
+    public int getNombrePaiementsTraites() {
+        return nombrePaiementsTraites;
+    }
+
+    public void setNombrePaiementsTraites(int nombrePaiementsTraites) {
+        this.nombrePaiementsTraites = nombrePaiementsTraites;
     }
 }

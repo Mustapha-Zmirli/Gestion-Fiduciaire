@@ -14,6 +14,16 @@ public class PaiementComptableTraitantDto {
     private double montant;
     private Comptable comptableTraitant;
     private TypePaiement typePaiement;
+    private boolean enAttente;
+
+
+    public boolean isEnAttente() {
+        return enAttente;
+    }
+
+    public void setEnAttente(boolean enAttente) {
+        this.enAttente = enAttente;
+    }
 
     public void setId(Long id) {
         this.id = id;

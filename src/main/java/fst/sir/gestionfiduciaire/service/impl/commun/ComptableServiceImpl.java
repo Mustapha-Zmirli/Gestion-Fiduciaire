@@ -10,6 +10,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ComptableServiceImpl implements ComptableService {
 
@@ -47,5 +49,10 @@ public class ComptableServiceImpl implements ComptableService {
             res=comptableDao.save(comptable);
         }
         return res;
+    }
+
+    @Override
+    public List<Comptable> getAll() {
+        return comptableDao.findAll();
     }
 }
