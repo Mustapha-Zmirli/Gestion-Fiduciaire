@@ -21,7 +21,7 @@ public class DemandePieceJointProvided{
         return dto;
     }
     @DeleteMapping("/code/{code}")
-    public int deleteByCode(String code) {
+    public int deleteByCode(@PathVariable String code) {
         return pieceJointService.deleteByCode(code);
     }
     @PostMapping("/")
@@ -29,7 +29,7 @@ public class DemandePieceJointProvided{
         return pieceJointService.save(demandePieceJoint);
     }
     @GetMapping("/code/{code}")
-    public DemandePieceJoint findPieceJointByDemandeCode(String code) {
+    public DemandePieceJoint findPieceJointByDemandeCode(@PathVariable String code) {
         return pieceJointService.findPieceJointByDemandeCode(code);
     }
 }
