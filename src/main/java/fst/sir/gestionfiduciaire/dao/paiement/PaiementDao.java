@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -18,5 +19,5 @@ public interface PaiementDao extends JpaRepository<PaiementDemande,Long> {
 
     List<PaiementDemande> findBySocieteCode(String code);
     @Query("SELECT p FROM PaiementDemande p WHERE p.datePaiement BETWEEN ?1 AND ?2")
-    List<PaiementDemande> getPaiementsBetweenDates(LocalDateTime dateDebut, LocalDateTime dateFin);
+    List<PaiementDemande> getPaiementsBetweenDates(Date dateDebut, Date dateFin);
 }

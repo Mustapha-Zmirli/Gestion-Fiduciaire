@@ -8,7 +8,7 @@ import fst.sir.gestionfiduciaire.service.facade.paiement.PaiementService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -63,11 +63,11 @@ public class PaiementServiceImpl implements PaiementService {
         // Delegate the database query to the paiementDao
         return paiementDao.findBySocieteCode(code);
     }
+
     @Override
     public double getTotalPayeOfDemande(String code) {
         List<PaiementDemande> paiements = paiementDao.findByDemandeCode(code);
-
-        double totalPaye = 0;
+        double totalPaye=0;
         for (PaiementDemande paiement : paiements) {
             totalPaye += paiement.getMontant();
         }
@@ -76,10 +76,12 @@ public class PaiementServiceImpl implements PaiementService {
     @Override
     @Transactional
     public int update(String code, PaiementDemande nouveauPaiement) {
-        PaiementDemande paiement = paiementDao.findByCode(code);
+
         if (paiementDao.findByCode(code) == null) {
             return -1;
         }
+
+        PaiementDemande paiement = paiementDao.findByCode(code);
         paiement.setMontant(nouveauPaiement.getMontant());
         paiement.setDatePaiement(nouveauPaiement.getDatePaiement());
         paiement.setTypePaiement(nouveauPaiement.getTypePaiement());
@@ -88,9 +90,10 @@ public class PaiementServiceImpl implements PaiementService {
         return 1;
     }
     @Override
-    public List<PaiementDemande> getPaiementsBetweenDates(LocalDateTime dateDebut, LocalDateTime dateFin) {
+    public List<PaiementDemande> getPaiementsBetweenDates(Date dateDebut, Date dateFin) {
         return paiementDao.getPaiementsBetweenDates(dateDebut, dateFin);
     }
+
 
     private final PaiementDao paiementDao;
     private final DemandeDao demandeDao;
