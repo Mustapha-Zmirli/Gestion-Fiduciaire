@@ -2,7 +2,7 @@ package fst.sir.gestionfiduciaire.service.impl.demande;
 import fst.sir.gestionfiduciaire.bean.demande.Demande;
 import fst.sir.gestionfiduciaire.dao.commun.ComptableDao;
 import fst.sir.gestionfiduciaire.dao.commun.SocieteDao;
-import fst.sir.gestionfiduciaire.dao.demande.DemandeDao;
+import fst.sir.gestionfiduciaire.dao.Demande.DemandeDao;
 import fst.sir.gestionfiduciaire.service.facade.demande.DemandeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

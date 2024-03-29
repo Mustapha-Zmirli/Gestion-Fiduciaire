@@ -23,6 +23,18 @@ public class PaiementComptableTraitant {
     @ManyToOne
     private TypePaiement typePaiement;
 
+    private boolean enAttente;
+
+    // Getters et setters pour l'attribut "enAttente"
+
+    public boolean isEnAttente() {
+        return enAttente;
+    }
+
+    public void setEnAttente(boolean enAttente) {
+        this.enAttente = enAttente;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

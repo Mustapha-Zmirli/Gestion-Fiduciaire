@@ -1,7 +1,7 @@
 package fst.sir.gestionfiduciaire.service.impl.demande;
 
 import fst.sir.gestionfiduciaire.bean.demande.DemandePieceJoint;
-import fst.sir.gestionfiduciaire.dao.demande.DemandeDao;
+import fst.sir.gestionfiduciaire.dao.Demande.DemandeDao;
 import fst.sir.gestionfiduciaire.dao.demande.DemandePieceJointDao;
 import fst.sir.gestionfiduciaire.service.facade.demande.DemandePieceJointService;
 import org.springframework.beans.factory.annotation.Autowired;
