@@ -2,6 +2,7 @@ package fst.sir.gestionfiduciaire.service.facade.paiement;
 
 
 import fst.sir.gestionfiduciaire.bean.commun.Comptable;
+import fst.sir.gestionfiduciaire.bean.commun.Societe;
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableTraitant;
 
 import java.util.Date;
@@ -11,6 +12,14 @@ import java.util.Map;
 public interface PaiementComptableTraitantService {
 
     void affecterPaiementEnAttente(Comptable comptable, PaiementComptableTraitant paiement);
+
+    List<PaiementComptableTraitant> getPaiementsTraitesParComptableTraitant(Comptable comptable);
+
+    int getNombrePaiementsTraites(Comptable comptable);
+
+    boolean estEnAttenteDeTraitement(PaiementComptableTraitant paiement);
+
+    PaiementComptableTraitant getPaiementParSociete(Societe societe);
 
     PaiementComptableTraitant findByCode(String code);
 
@@ -51,6 +60,7 @@ public interface PaiementComptableTraitantService {
 
     int countPaiementsByComptable(Comptable comptable);
     List<PaiementComptableTraitant> findAll();
+
 
 
 }

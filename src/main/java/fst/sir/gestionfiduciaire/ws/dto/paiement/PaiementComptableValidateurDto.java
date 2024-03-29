@@ -6,6 +6,8 @@ import fst.sir.gestionfiduciaire.bean.demande.Demande;
 import fst.sir.gestionfiduciaire.bean.commun.Societe;
 import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
 
+import java.util.Date;
+
 public class PaiementComptableValidateurDto {
     private Long id;
     private String code;
@@ -14,6 +16,52 @@ public class PaiementComptableValidateurDto {
     private double montant;
     private TypePaiement typePaiement;
     private Comptable comptableValidateur;
+    private boolean enAttenteValidation;
+    private boolean valide;
+
+    private String raisonRejet;
+    private Date dateCreation;
+    private Date dateLimite;
+
+    public boolean isEnAttenteValidation() {
+        return enAttenteValidation;
+    }
+
+    public void setEnAttenteValidation(boolean enAttenteValidation) {
+        this.enAttenteValidation = enAttenteValidation;
+    }
+
+    public boolean isValide() {
+        return valide;
+    }
+
+    public void setValide(boolean valide) {
+        this.valide = valide;
+    }
+
+    public String getRaisonRejet() {
+        return raisonRejet;
+    }
+
+    public void setRaisonRejet(String raisonRejet) {
+        this.raisonRejet = raisonRejet;
+    }
+
+    public Date getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Date dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public Date getDateLimite() {
+        return dateLimite;
+    }
+
+    public void setDateLimite(Date dateLimite) {
+        this.dateLimite = dateLimite;
+    }
 
     public void setId(Long id) {
         this.id = id;

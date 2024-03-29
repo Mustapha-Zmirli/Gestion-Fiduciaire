@@ -5,7 +5,6 @@ import fst.sir.gestionfiduciaire.bean.commun.Comptable;
 import fst.sir.gestionfiduciaire.bean.commun.Societe;
 import fst.sir.gestionfiduciaire.bean.demande.Demande;
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableTraitant;
-import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableValidateur;
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementDemande;
 import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
 import fst.sir.gestionfiduciaire.dao.paiement.PaiementComptableTraitantDao;
@@ -22,7 +21,6 @@ import java.util.*;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-// Importez d'autres classes JPA au besoin
 
 
 @Service
@@ -139,6 +137,28 @@ public class PaiementComptableTraitantImpl implements PaiementComptableTraitantS
             throw new IllegalStateException("Le paiement n'est pas en attente.");
         }
     }
+
+    @Override
+    public List<PaiementComptableTraitant> getPaiementsTraitesParComptableTraitant(Comptable comptable) {
+        return dao.findByComptableTraitant(comptable);
+    }
+    @Override
+    public int getNombrePaiementsTraites(Comptable comptable) {
+        List<PaiementComptableTraitant> paiementsTraites = getPaiementsTraitesParComptableTraitant(comptable);
+        return paiementsTraites.size();
+}
+
+    @Override
+    public boolean estEnAttenteDeTraitement(PaiementComptableTraitant paiement) {
+        return paiement.getComptableTraitant() == null;
+    }
+    @Override
+    public PaiementComptableTraitant getPaiementParSociete(Societe societe) {
+        String codeSociete = societe.getCode();
+        return dao.findBySocieteCode(codeSociete);
+    }
+
+
 
 
     @Override

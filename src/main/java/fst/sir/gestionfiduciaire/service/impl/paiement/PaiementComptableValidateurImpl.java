@@ -4,7 +4,6 @@ package fst.sir.gestionfiduciaire.service.impl.paiement;
 import fst.sir.gestionfiduciaire.bean.commun.Comptable;
 import fst.sir.gestionfiduciaire.bean.commun.Societe;
 import fst.sir.gestionfiduciaire.bean.demande.Demande;
-import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableTraitant;
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementComptableValidateur;
 import fst.sir.gestionfiduciaire.bean.paiement.PaiementDemande;
 import fst.sir.gestionfiduciaire.bean.paiement.TypePaiement;
@@ -48,7 +47,7 @@ public class PaiementComptableValidateurImpl implements PaiementComptableValidat
             rapportPaiement.put("Code", paiementDemande.getCode());
             /*
             rapportPaiement.put("Societe", paiementDemande.getSociete().getNom()); // Supposons que Societe a un attribut nom
-            rapportPaiement.put("ComptableTraitant", paiementDemande.getComptableTraitant().getNom()); // Supposons que Comptable a un attribut nom
+            rapportPaiement.put("ComptableValidateur", paiementDemande.getComptableValidateur().getNom()); // Supposons que Comptable a un attribut nom
             // Ajoutez d'autres attributs si nécessaire*/
             rapportPaiement.put("Montant", paiementDemande.getMontant());
             rapportPaiement.put("TypePaiement", paiementDemande.getTypePaiement().getLibelle());
@@ -75,7 +74,7 @@ public class PaiementComptableValidateurImpl implements PaiementComptableValidat
     }
     @Override
     public int countPaiementsByComptable(Comptable comptable) {
-        List<PaiementComptableTraitant> paiements = (List<PaiementComptableTraitant>) dao.findByComptableValidateurCin(comptable.getCin());
+        List<PaiementComptableValidateur> paiements = (List<PaiementComptableValidateur>) dao.findByComptableValidateurCin(comptable.getCin());
         return paiements.size(); // Retourne la taille de la liste des paiements
     }
     @Override
